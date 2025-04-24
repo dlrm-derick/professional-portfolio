@@ -1,0 +1,139 @@
+body{
+    background-color: #d9d2e6;
+    font-family: Arial, sans-serif;
+    /* margin: 0px; */
+}
+
+#menu{
+    background-color: #a489d5;
+    width: 350px;
+    height: 98%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: fixed;
+    flex-direction: column;
+    border-radius: 25px;
+}
+#menu img{
+    width: 200px;
+    height: 200px;
+    border-radius: 25px;
+    margin: 20px auto;
+}
+#menu h2{
+    color: rgb(220, 195, 195);
+    font-size: 30px;
+    margin: 0px;
+    font-family: 'Courier New', Courier, monospace;
+}
+#menu h2:hover{
+    color: #FF0000;
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+#menu h2:active{
+    color: #FF0000;
+    transform: scale(0.9);
+    transition: 0.5s;
+}
+
+#menu h3{
+    color: rgb(16, 14, 14);
+    font-size: 20px;
+    margin: 0px;
+    font-family: 'Courier New', Courier, monospace;
+    border-color: #FF0000;
+    border-style: solid;
+    border-width: 0px 0px 2px 0px;
+    border-radius: 25px;
+    background-color: aqua;
+    padding: 10px;
+}
+#menu ul{
+    list-style: none;
+    padding: 0;
+}
+#menu ul li{
+    margin: 10px 0;
+    width: 100%;
+    text-align: center;
+}
+#menu ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    padding: 10px 20px;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+#menu ul li a:hover{
+    background-color: #8a6bbd;
+    border-radius: 5px;
+}
+#menu ul li a:active{
+    background-color: #8a6bbd;
+    border-radius: 5px;
+}
+
+section{
+    margin-left: 350px;
+    padding: 20px;
+    background-color: #d9d2e6;
+}
+
+#foto_personal{
+    width: 200px;
+    height: 200px;
+    border-radius: 5%;
+    margin: 0 auto; 
+}
+
+#foto_presentacion{
+    width: 500px;
+    height: 450x;
+    border-radius: 10%;
+    margin: 0 auto;
+}
+
+#contacto a{
+    text-decoration: none;
+    color: black;
+}
+#contacto a:hover{
+    color: #FF0000;
+    transition: 0.5s;
+}
+#contacto a:active{
+    color: #FF0000;
+    transition: 0.5s;
+}
+#contacto img{
+    width: 32px;
+    height: 32px;
+    border-radius: 10%;
+    margin: 0 auto;
+}
+
+#contacto{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+#contacto div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+footer{
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin: 10px;
+    width: 100%;
+}
