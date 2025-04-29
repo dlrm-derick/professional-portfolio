@@ -12,11 +12,11 @@
     </header>
     -->
     <nav id="menu">
-        
-        <h2>ROSADO MARRIOTT</h2>
-        <h2>DERICK LEONARDO</h2>
+        <br>
+        <h2 class="letra_titulo">ROSADO MARRIOTT</h2>
+        <h2 class="letra_titulo">DERICK LEONARDO</h2>
         <img src="../recursos/02.png" alt="foto personal" id="foto_personal">
-        <h3>Desarrollador Web</h3>
+        <h3>Junior Developer</h3>
         <ul>
             <li><a href="#presentacion">Inicio</a></li>
             <li><a href="#proyectos">Proyectos</a></li>
@@ -24,33 +24,83 @@
         </ul>
     </nav>
     <section id="presentacion">
-        <h2>Bienvenido a mi portafolio</h2>
-        <p>Aquí encontrarás una selección de mis trabajos y proyectos más destacados.</p>
-        <img src="../recursos/01.png"alt="Imagen de presentación" id="foto_presentacion">
-        <h2>Conocimientos</h2>
-        <ul>
-            <li>MySQL</li>
-            <li>Python</li>
-            <li>C#</li>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-        </ul>
-        <h2>Tecnologias</h2>
-        <ul>
-            <li>Bootstrap</li>
-            <li>Git/Github</li>
-            <li>Flask</li>
-            <li>React</li>
-            <li>MongoDB</li>
-            <li>PostgreSQL</li>
+        <div class="presentacion_inicial">
+            <div>
+                <h2 class="letra_titulo">Bienvenidos a mi portafolio</h2>
+                <p class="letra_cuerpo">Aquí encontrarás una selección de mis trabajos y proyectos más destacados.</p>
+            </div>
+            <img src="../recursos/01.png"alt="Imagen de presentación" id="foto_presentacion">
+        </div>
+        <div class="presentacion_inicial">
+            <div>
+                <h2 class="letra_titulo">Conocimientos</h2>
+                <br>
+                <ul class="tabla">
+                    <li>MySQL</li>
+                    <li>Python</li>
+                    <li>C#</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                </ul>
+            </div>
+            <div class="presentacion_relleno"><br></div>
+            <div>
+                <h2 class="letra_titulo">Tecnologias</h2>
+                <br>
+                <ul class="tabla">
+                    <li>Bootstrap</li>
+                    <li>Git/Github</li>
+                    <li>Flask</li>
+                    <li>React</li>
+                    <li>MongoDB</li>
+                    <li>PostgreSQL</li>
+                </ul>
+            </div>
+        </div>
     </section>
     <section id="proyectos">
-        <h2>Proyectos Destacados</h2>
+        <h2 class="letra_titulo titulo_extra" >Proyectos Destacados</h2>
         <!-- Aquí puedes agregar detalles sobre tus proyectos -->
+        <table id="repos">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Descripción</th>
+              <th>Lenguaje</th>
+              <th>Enlace</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+    
+        <script>
+          fetch("http://localhost:3000/pinned")
+            .then(res => res.json())
+            .then(data => {
+              const tbody = document.querySelector("#repos tbody");
+            
+              data.forEach(repo => {
+                const row = document.createElement("tr");
+                
+                row.innerHTML = `
+                  <td>${repo.name}</td>
+                  <td>${repo.description || "Sin descripción"}</td>
+                  <td>${repo.primaryLanguage?.name || "No especificado"}</td>
+                  <td><a href="${repo.url}" target="_blank">Ver en GitHub</a></td>
+                `;
+                
+                tbody.appendChild(row);
+              });
+            })
+            .catch(error => {
+              console.error("Error al cargar los repos:", error);
+            });
+        </script>
+
     </section>
     <section id="contacto">
-        <h2>Contacto</h2>
+        <h2 class="letra_titulo titulo_extra">Contacto</h2>
         <!-- 
         <a href="https://www.flaticon.es/iconos-gratis/facebook" title="facebook iconos">
         <a href="https://www.flaticon.es/iconos-gratis/logotipo-de-instagram" title="logotipo de instagram iconos" class="logos"></a>
