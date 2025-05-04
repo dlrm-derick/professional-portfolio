@@ -1,0 +1,27 @@
+{
+  "name": "portafolio_profesional",
+  "version": "1.0.0",
+  "description": "A web project that demonstrates the knowledge I have to date, seeking to integrate HTML, CSS, JavaScript, and if possible Python, C#, MySQL, and Ruby.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dlrm-derick/professional-portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dlrm-derick/professional-portfolio/issues"
+  },
+  "homepage": "https://github.com/dlrm-derick/professional-portfolio#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "node-fetch": "^3.3.2"
+  }
+}

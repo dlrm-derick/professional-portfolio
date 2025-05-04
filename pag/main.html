@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../style/main.css">
     <title>Portafolio</title>
 </head>
@@ -15,12 +16,15 @@
         <br>
         <h2 class="letra_titulo">ROSADO MARRIOTT</h2>
         <h2 class="letra_titulo">DERICK LEONARDO</h2>
-        <img src="../recursos/02.png" alt="foto personal" id="foto_personal">
-        <h3>Junior Developer</h3>
+        <br>
+        <div class="menu_foto">
+            <img src="../recursos/01.png" alt="foto personal" id="foto_personal">
+            <h3>Junior Developer</h3>
+        </div>
         <ul>
-            <li><a href="#presentacion">Inicio</a></li>
-            <li><a href="#proyectos">Proyectos</a></li>
-            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#presentacion" class="btn">Inicio</a></li>
+            <li><a href="#proyectos" class="btn">Proyectos</a></li>
+            <li><a href="#contacto" class="btn">Contacto</a></li>
         </ul>
     </nav>
     <section id="presentacion">
@@ -28,8 +32,10 @@
             <div>
                 <h2 class="letra_titulo">Bienvenidos a mi portafolio</h2>
                 <p class="letra_cuerpo">Aquí encontrarás una selección de mis trabajos y proyectos más destacados.</p>
+                <br>
+                <a href="../recursos/CV RosadoMarriott.pdf.pdf" download class="btn">Descarga cv</a>
             </div>
-            <img src="../recursos/01.png"alt="Imagen de presentación" id="foto_presentacion">
+            <img src="../recursos/principal.png"alt="Imagen de presentación" id="foto_presentacion">
         </div>
         <div class="presentacion_inicial">
             <div>
@@ -49,12 +55,9 @@
                 <h2 class="letra_titulo">Tecnologias</h2>
                 <br>
                 <ul class="tabla">
-                    <li>Bootstrap</li>
                     <li>Git/Github</li>
-                    <li>Flask</li>
-                    <li>React</li>
-                    <li>MongoDB</li>
-                    <li>PostgreSQL</li>
+                    <li>Linux</li>
+                    <li>Bash</li>
                 </ul>
             </div>
         </div>
@@ -62,35 +65,40 @@
     <section id="proyectos">
         <h2 class="letra_titulo titulo_extra" >Proyectos Destacados</h2>
         <!-- Aquí puedes agregar detalles sobre tus proyectos -->
-        <table id="repos">
-          <thead>
-            <tr>
-              <th>Nombre</th>
-              <th>Descripción</th>
-              <th>Lenguaje</th>
-              <th>Enlace</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
+        <br>
+        <div id="repos">
+
+        </div>
     
         <script>
           fetch("http://localhost:3000/pinned")
             .then(res => res.json())
             .then(data => {
-              const tbody = document.querySelector("#repos tbody");
+              const container = document.getElementById("repos"); //es un contenedor div
             
               data.forEach(repo => {
-                const row = document.createElement("tr");
+                const repoDiv = document.createElement("div");
+                repoDiv.style.border = "2px solid #ccc"; // Opcional: un borde para distinguir
+                repoDiv.style.padding = "10px";
+                repoDiv.style.marginBottom = "20px";
+                repoDiv.style.borderRadius = "10px";
                 
-                row.innerHTML = `
-                  <td>${repo.name}</td>
-                  <td>${repo.description || "Sin descripción"}</td>
-                  <td>${repo.primaryLanguage?.name || "No especificado"}</td>
-                  <td><a href="${repo.url}" target="_blank">Ver en GitHub</a></td>
+                // Usar imagen de GitHub si existe, sino imagen local de recursos
+                const imageUrl = repo.openGraphImageUrl || "../recursos/01.jpg";
+                // Capitalizar la primera letra del nombre
+                const capitalizedName = repo.name.charAt(0).toUpperCase() + repo.name.slice(1);
+
+                repoDiv.innerHTML = `
+                    <h2 style="text-align: center;">${capitalizedName}</h2>
+                    <div style="text-align: center;">
+                        <img src="${imageUrl}" alt="Imagen del repositorio" style="width:100%; max-width:400px; height:auto; margin-top:10px; display: inline-block;">
+                        <p style="margin-top:10px;">${repo.description || "Sin descripción"}</p>
+                        <p style="margin-top:10px; font-weight:bold; text-align: left;">Lenguaje: ${repo.primaryLanguage?.name || "No especificado"}</p>
+                        <a href="${repo.url}" target="_blank" style="display:block; margin-top:10px; color:white; text-decoration: none; font-weight: bold; text-align: right; margin-right: 10px">Ver en GitHub</a>
+                    </div>
                 `;
-                
-                tbody.appendChild(row);
+            
+                container.appendChild(repoDiv);
               });
             })
             .catch(error => {
@@ -109,15 +117,15 @@
             -->
         <div>
             <a href="https://github.com/dlrm-derick"><img src="../recursos/github.png" alt="GitHub"></a>
-            <p>GitHub</p>
+            <a class="contacto_link" href="https://github.com/dlrm-derick"><p>GitHub</p></a>
             <a href="https://www.linkedin.com/in/derick-rosado-marriott-9294bb361/"><img src="../recursos/linkedin.png" alt="LinkedIn"></a>
-            <p>LinkedIn</p>
+            <a class="contacto_link" href="https://www.linkedin.com/in/derick-rosado-marriott-9294bb361/"><p>LinkedIn</p></a>
             <a href="https://wa.me/+593968445383"><img src="../recursos/whasatpp.png" alt="WhatsApp"></a>
-            <p>WhatsApp</p>
-            <a href="https://www.facebook.com/profile.php?id=61565492210638" alt="facebook"><img src="../recursos/facebook.png" alt=""></a>
-            <p>Facebook</p>
+            <a class="contacto_link" href="https://wa.me/+593968445383"><p>WhatsApp</p></a>
+            <a href="https://www.facebook.com/profile.php?id=61565492210638"><img src="../recursos/facebook.png" alt=""></a>
+            <a class="contacto_link" href="https://www.facebook.com/profile.php?id=61565492210638"><p>Facebook</p></a>
             <a href="https://www.instagram.com/dry_mky/"><img src="../recursos/instagram.png" alt="Instagram"></a>
-            <p>Instagram</p>
+            <a class="contacto_link" href="https://www.instagram.com/dry_mky/"><p>Instagram</p></a>
         </div>
     </section>
     <footer>

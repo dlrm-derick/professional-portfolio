@@ -28,8 +28,8 @@ section{
 
 /*--------------------- lateral -----------------*/
 #foto_personal{
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 210px;
     border-radius: 5%;
     margin: 0 auto; 
 }
@@ -60,12 +60,6 @@ section{
     flex-direction: column;
     border-radius: 25px;
 }
-#menu img{
-    width: 200px;
-    height: 200px;
-    border-radius: 25px;
-    margin: 20px auto;
-}
 #menu h2{
     
     font-size: 30px;
@@ -82,12 +76,13 @@ section{
 }
 #menu h3{
     font-size: 20px;
-    margin: 0px;
     font-family: 'Courier New', Courier, monospace;
     border-width: 0px 0px 2px 0px;
     border-radius: 25px;
-    background-color: rgb(66, 94, 234);
+    background: linear-gradient(to right, #667eea, #764ba2);
     padding: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 #menu ul{
     list-style: none;
@@ -101,18 +96,7 @@ section{
 #menu ul li a{
     text-decoration: none;
     color: white;
-    font-size: 20px;
-    padding: 10px 20px;
     display: block;
-    transition: background-color 0.3s ease;
-}
-#menu ul li a:hover{
-    background-color: #8a6bbd;
-    border-radius: 5px;
-}
-#menu ul li a:active{
-    background-color: #8a6bbd;
-    border-radius: 5px;
 }
 
 /*--------------------- presentacion -----------------*/
@@ -127,7 +111,6 @@ section{
 }
 #presentacion ul{
     list-style: none;
-    padding: auto;
 }
 #presentacion li{
     margin-bottom: 10px;
@@ -167,7 +150,25 @@ section{
     margin: 0 auto 10;
 
 }
+.btn{
+  text-decoration: none;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  color: white;
+  background: #667eea;
+  border: none;
+  border-radius: 50px;
+  transition: 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  position: relative;
+}
 
+.btn:hover {
+  background: #7a44f8;
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
 /*--------------------- proyectos -----------------*/
 
 
@@ -183,14 +184,10 @@ section{
 }
 #contacto a{
     text-decoration: none;
-    color: black;
+    color: rgb(255, 255, 255);
 }
 #contacto a:hover{
-    color: #FF0000;
-    transition: 0.5s;
-}
-#contacto a:active{
-    color: #FF0000;
+    color: #1100ff;
     transition: 0.5s;
 }
 #contacto img{
@@ -203,9 +200,9 @@ section{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 13px;
 }
-
+/*--------------------- footer -----------------*/
 footer{
     color: white;
     text-align: center;
