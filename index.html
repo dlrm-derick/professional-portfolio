@@ -71,7 +71,7 @@
         </div>
     
         <script>
-          fetch("http://localhost:10000/pinned")
+          fetch("/pinned")
             .then(res => res.json())
             .then(data => {
               const container = document.getElementById("repos"); //es un contenedor div
